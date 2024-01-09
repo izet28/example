@@ -3,9 +3,7 @@ version: "3"
 services:
   web:
     container_name: web
-    build:
-      context: .
-      dockerfile: ./apps/web/Dockerfile
+    image: faris94/web:latest
     restart: always
     ports:
       - 3000:3000
@@ -14,9 +12,7 @@ services:
 
   api:
     container_name: api
-    build:
-      context: .
-      dockerfile: ./apps/api/Dockerfile
+    image: faris94/api:latest  
     restart: always
     ports:
       - 3001:3001
