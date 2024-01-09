@@ -7,23 +7,26 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    # - name: copy file via ssh password
-    #   uses: appleboy/scp-action@v0.1.7
-    #   with:
-    #     host: "103.147.33.51"
-    #     username: "root"
-    #     password: "Inilah@422021"
-    #     port: 22
-    #     source: "./docker-compose.yml"
-    #     target: /home/test
-        
-      - name: remote docker-compose up via ssh
-          uses: appleboy/ssh-action@v0.1.7
-          with:
-          host: "103.147.33.51"
-          username: "root"
-          password: "Inilah@422021"
-          port: 22
-            script: |
-              cd /home/test
-              docker compose up -d
+    - name: copy file via ssh password
+      uses: appleboy/scp-action@v0.1.7
+      with:
+        host: "103.147.33.51"
+        username: "root"
+        password: "Inilah@422021"
+        port: 22
+        source: "./docker-compose.yml"
+        target: /home/test
+        script: |
+            cd /home/test
+            docker compose up -d
+
+    - name: executing remote ssh commands using password
+      uses: appleboy/ssh-action@v1.0.3
+      with:
+        host: "103.147.33.51"
+        username: "root"
+        password: "Inilah@422021"
+        port: "Inilah@422021"
+        script: |
+            cd /home/test
+            docker compose up -d
