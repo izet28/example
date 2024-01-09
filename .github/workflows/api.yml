@@ -1,8 +1,9 @@
-name: CI
+name: API
  
 on:
   push:
     branches: ["main"]
+
 jobs:
   push_to_registry:
     name: Push Docker image to Docker Hub
@@ -14,8 +15,8 @@ jobs:
       - name: Log in to Docker Hub
         uses: docker/login-action@f4ef78c080cd8ba55a85445d5b36e214a81df20a
         with:
-          username: ${{ secrets.DOCKER_USERNAME }}
-          password: ${{ secrets.DOCKER_PASSWORD }}
+          username: faris94
+          password: dckr_pat_BATTWjECJOYJbXgSZcPb5OoM-BA
           
       - name: Extract metadata (tags, labels) for Docker
         id: meta
