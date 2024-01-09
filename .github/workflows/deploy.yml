@@ -1,5 +1,11 @@
 name: scp files
-on: [push]
+on:
+  # Triggered on every successful Build action
+  workflow_run:
+    workflows: ["WEB","API"]
+    branches: [main]
+    types:
+      - completed
 jobs:
 
   build:
