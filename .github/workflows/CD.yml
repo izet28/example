@@ -2,7 +2,7 @@ name: scp files
 on:
   # Triggered on every successful Build action
   workflow_run:
-    workflows: ["WEB","API"]
+    workflows: ["CI"]
     branches: [main]
     types:
       - completed
