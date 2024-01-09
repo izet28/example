@@ -26,7 +26,7 @@ jobs:
         host: "103.147.33.51"
         username: "root"
         password: "Inilah@422021"
-        port: "Inilah@422021"
+        port: 22
         script: |
             cd /home/test
             docker compose up -d
