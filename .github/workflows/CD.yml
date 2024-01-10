@@ -1,4 +1,4 @@
-name: scp files
+name: CD
 on:
   # Triggered on every successful Build action
   workflow_run:

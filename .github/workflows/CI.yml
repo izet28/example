@@ -35,4 +35,8 @@ jobs:
           file: ./apps/api/Dockerfile
           push: true
           tags: ${{ secrets.DOCKER_USERNAME }}/api:latest    
+<<<<<<< HEAD
   
+=======
+  
+>>>>>>> b763f0da1928b52b38254848a419f9d04dfcde40
