@@ -30,19 +30,18 @@ pipeline {
             }
         }
         
-        // stage('Build and Test Component1') {
-        //     when {
-        //         // Tahap ini hanya berjalan jika ada perubahan di component1
-        //         equals(expected: 'true', actual: env.COMPONENT1_CHANGED)
-        //     }
-        //     steps {
-        //         // Bangun komponen1
-        //         sh 'cd component1 && ./build.sh'
-                
-        //         // Uji komponen1
-        //         sh 'cd component1 && ./test.sh'
-        //     }
-        // }
+        stage('Build and Test Component1') {
+            when {
+                // Tahap ini hanya berjalan jika ada perubahan di component1
+                equals(expected: 'true', actual: env.COMPONENT1_CHANGED)
+            }
+            steps {
+                // Bangun komponen1
+              sh 'docker login -u faris94 -p Insider2816.'
+              sh 'docker build . -t faris94/apps:web -f apps/web/Dockerfile'
+              sh 'docker push faris94/apps:web'
+            }
+        }
         
         // stage('Deploy Component1') {
         //     when {
