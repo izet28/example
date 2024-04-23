@@ -37,7 +37,7 @@ export default function Web() {
 
   return (
     <div>
-      <h1>Wessbsasdasdasdaaaaaasssaaaaaassssssdsss</h1>
+      <h1>Wessbsasdasdasdaaaaaasssaaaaaassssssssdsss</h1>
       <form onSubmit={onSubmit}>
         <label htmlFor="name">Name </label>
         <input
