@@ -15,7 +15,7 @@ pipeline {
             }
         }
         
-        stage('Identify Changed Component') {
+        stage('Identify Changed Component Web') {
             steps {
                 script {
                     // Ambil informasi perubahan dari env.GIT_COMMIT dan env.GIT_PREVIOUS_COMMIT
@@ -30,7 +30,7 @@ pipeline {
             }
         }
         
-        stage('Build and Test Component1') {
+        stage('Build web') {
             when {
                 // Tahap ini hanya berjalan jika ada perubahan di component1
                 equals(expected: 'true', actual: env.COMPONENT1_CHANGED)
@@ -43,7 +43,7 @@ pipeline {
             }
         }
 
-        stage('Identify Changed Component') {
+        stage('Identify Changed Component Api') {
             steps {
                 script {
                     // Ambil informasi perubahan dari env.GIT_COMMIT dan env.GIT_PREVIOUS_COMMIT
@@ -58,7 +58,7 @@ pipeline {
             }
         }
         
-        stage('Build and Test Component1') {
+        stage('Build API') {
             when {
                 // Tahap ini hanya berjalan jika ada perubahan di component1
                 equals(expected: 'true', actual: env.COMPONENT1_CHANGED)
